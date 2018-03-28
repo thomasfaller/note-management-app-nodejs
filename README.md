@@ -4,9 +4,15 @@ This is a server-side application built with NodeJs to add/remove notes.
 
 ## Setup
 
+type **npm install** to install all needed dependencies
+
+```
+$ npm install
+```
+
 ### Adding a note
 
-To add a note you can type **node app.js add --title=*<title of my note>* --body=*<content of my note>***:
+To add a note you can type **node app.js add --title=*<title of my note>* --body=*<content of my note>***
 
 ```
 $ node app.js add --title="This is a note" --body="This is the content of my note"
