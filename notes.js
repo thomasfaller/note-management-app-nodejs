@@ -40,20 +40,22 @@ const getAll = () => {
   const notes = fetchNotes()
   if (notes) {
     log(hl('Notes'))
-    log(hl('- - - - - - - - -'))
+    log(hl('- - - -'))
     notes.map((note) => {
-      log(`- Title: ${note.title}`)
-      log(`- Body: ${note.body}`)
+      log(`Title: ${note.title}`)
+      log(`Body: ${note.body}`)
       log('- - - - - -')
     })
     log(`Total notes: ${notes.length}`)
-    log(hl('- - - - - - - - -'))
+    log(hl('- - - -'))
   } else {
     log('No notes added yet.')
   }
 }
 const getNote = (title) => {
-  console.log('Reading a note')
+  const notes = fetchNotes()
+  const filteredNotes = notes.filter((note) => note.title === title)
+  return filteredNotes[0]
 }
 const removeNote = (title) => {
   const notes = fetchNotes()

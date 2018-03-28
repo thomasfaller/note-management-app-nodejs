@@ -9,7 +9,6 @@ const log = (item) => {
 const error = chalk.bold.red
 const warning = chalk.keyword('orange')
 const success = chalk.bold.green
-const NoteNotFound = () => { warning('Note not found.') }
 
 log(success('Starting app.js...'))
 
@@ -27,8 +26,8 @@ if (command === 'add') {
   } else { 
     log(success('New note added!'))
     log('---')
-    log(`Title: ${argv.title}`)
-    log(`Body: ${argv.body}`)
+    log(`Title: ${note.title}`)
+    log(`Body: ${note.body}`)
   }
 } else if (command === 'list') {
   notes.getAll()
@@ -37,10 +36,10 @@ if (command === 'add') {
   if (note) {
     log(success('Note found'))
     log('---')
-    log(`Title: ${argv.title}`)
-    log(`Body: ${argv.body}`)
+    log(`Title: ${note.title}`)
+    log(`Body: ${note.body}`)
   } else {
-    log(NoteNotFound())
+    log(warning('Note not found.'))
   }
 } else if (command === 'remove') {
   const noteRemoved = notes.removeNote(argv.title)
