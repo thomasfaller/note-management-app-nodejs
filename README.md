@@ -28,8 +28,17 @@ Body: This is the content of my first note
 To delete a note you can type **node app.js remove --title=*<title of my note>***:
 
 ```
-$ node app.js add --title="This is a note"
+$ node app.js remove --title="This is a note"
 ```
+
+the following output will be logged into the console:
+
+```
+Starting app.js...
+- Starting notes.js...
+Note was removed
+```
+
 
 
 
